@@ -24,7 +24,7 @@ export default function Home() {
   }
 
   const now = new Date();
-  if (!(now.getFullYear() === 2024 && now.getMonth() === 1 && now.getDate() === 14)) {
+  if (!(now.getFullYear() === 2025 && now.getMonth() === 1 && now.getDate() === 14)) {
     return (
       <div
       className={cn("min-h-screen flex flex-col items-center justify-center p-8", "bg-[#f6f3ee]", playfair.className)}
