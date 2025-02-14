@@ -3,6 +3,8 @@
 import { useState, useEffect } from "react"
 import { Word } from "@/components/Word"
 import Image from "next/image"
+import signature from "@/assets/signature.png"
+import roses from "@/assets/roses.png"
 
 const letter = [
   { text: "Happy Valentine's day Richie,", isTitle: true, newLine: true },
@@ -47,7 +49,7 @@ const letter = [
   { text: "you" },
   { text: "—" },
   { text: "your" },
-  { text: "optimism", newLine: true, interactive: true, options: ["optimism", "kindness", "drive", "cuteness", "propensity for making people like you", "bright and positive energy", "holistic mindset and worldview", "whole being, inward and outward", "whole being, inward and outward."] },
+  { text: "optimism", newLine: true, interactive: true, options: ["optimism", "kindness", "drive", "appeal", "propensity for making people like you", "bright and positive energy", "holistic mindset and worldview", "whole being, inward and outward", "whole being, inward and outward."] },
   { text: "You" },
   { text: "bring" },
   { text: "a" },
@@ -192,18 +194,35 @@ export function Letter() {
           </>
         ))}
       </p>
-      {currentIndex === letter.length && (
-          <>
-            <div className="flex justify-between mt-4">
-              <div className="w-1/2">
-                <Image src="/signature.png" alt="signature" width={150} height={150} />
-              </div>
-              <div className="w-1/2 translate-y-[-100px] translate-x-[100px]">
-                <Image src="/roses.png" alt="roses" width={250} height={250} />
-              </div>
-            </div>
-          </>
-        )}
+      <div className="flex justify-between mt-4">
+        <div className="w-1/2">
+          <Image 
+            src={signature} 
+            alt="signature" 
+            width={150} 
+            height={150}
+            className={`transition-opacity duration-1000 ease-in-out delay-500 object-contain 
+              ${currentIndex === letter.length ? "opacity-100 visible" : "opacity-0 invisible pointer-events-none"}`}
+          />
+        </div>
+        <div className="w-1/2 translate-y-[-100px] translate-x-[100px]">
+          <Image 
+            src={roses} 
+            alt="roses" 
+            width={250} 
+            height={250} 
+            className={`transition-opacity duration-1000 ease-in-out delay-700 object-contain 
+              ${currentIndex === letter.length ? "opacity-100 visible" : "opacity-0 invisible pointer-events-none"}`}
+          />
+        </div>
+      </div>
+      <a 
+        href="https://tracksg.doordash.com/ls/click?..." 
+        className={`block text-sm text-[#575279] mt-4 italic underline text-center transition-opacity duration-1000 ease-in-out
+          ${currentIndex === letter.length ? "opacity-100 visible" : "opacity-0 invisible pointer-events-none"}`}
+      >
+        Psst... keep an eye out for a gift.
+      </a>
     </div>
   )
 }

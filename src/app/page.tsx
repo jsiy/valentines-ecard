@@ -23,15 +23,26 @@ export default function Home() {
     setStarted(true)
   }
 
+  const now = new Date();
+  if (!(now.getFullYear() === 2024 && now.getMonth() === 1 && now.getDate() === 14)) {
+    return (
+      <div
+      className={cn("min-h-screen flex flex-col items-center justify-center p-8", "bg-[#f6f3ee]", playfair.className)}
+    >
+      <div className="w-[400px] mx-auto p-8 border border-[#575279] rounded bg-white">
+        <h1 className="text-2xl font-bold text-[#575279] mb-4 text-center">Wait &apos;til Valentine&apos;s Day!</h1>
+        <p className="text-3xl text-center">💌</p>
+      </div>
+    </div>
+    )
+  }
+
   if (!isAuthenticated) {
     return <PasswordEntry onCorrectPassword={handleCorrectPassword} />
   }
 
   return (
     <>
-    <head>
-      <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🐧</text></svg>"></link>
-    </head>
     <main
       className={cn("min-h-screen flex flex-col items-center justify-center p-8", "bg-[#f6f3ee]", playfair.className)}
     >
@@ -49,4 +60,3 @@ export default function Home() {
     </>
   )
 }
-
