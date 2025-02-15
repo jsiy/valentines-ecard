@@ -217,7 +217,7 @@ export function Letter() {
         </div>
       </div>
       <a 
-        href="https://tracksg.doordash.com/ls/click?..." 
+        href="https://www.doordash.com/gifts/07485f3e-914b-4ad4-a7be-637eb3ca99d1" 
         className={`block text-sm text-[#575279] mt-4 italic underline text-center transition-opacity duration-1000 ease-in-out
           ${currentIndex === letter.length ? "opacity-100 visible" : "opacity-0 invisible pointer-events-none"}`}
       >
