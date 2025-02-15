@@ -51,7 +51,7 @@ export default function Home() {
           onClick={handleStart}
           className="text-4xl text-[#4a4a4a] hover:text-[#ff6b6b] transition-colors cursor-pointer"
         >
-          gdmornigfn
+          hi richie!
         </button>
       ) : (
         <Letter />
